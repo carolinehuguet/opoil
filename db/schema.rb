@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_173056) do
+ActiveRecord::Schema.define(version: 2020_11_16_174120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dogs", force: :cascade do |t|
+    t.string "name"
+    t.string "size"
+    t.string "breed"
+    t.string "description"
+    t.string "picture"
+    t.integer "rate"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_dogs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,4 +44,19 @@ ActiveRecord::Schema.define(version: 2020_11_16_173056) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "walks", force: :cascade do |t|
+    t.integer "price"
+    t.string "status"
+    t.datetime "date_time"
+    t.bigint "user_id", null: false
+    t.bigint "dog_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dog_id"], name: "index_walks_on_dog_id"
+    t.index ["user_id"], name: "index_walks_on_user_id"
+  end
+
+  add_foreign_key "dogs", "users"
+  add_foreign_key "walks", "dogs"
+  add_foreign_key "walks", "users"
 end
