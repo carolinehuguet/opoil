@@ -1,0 +1,16 @@
+
+
+ <%#= card_hom_pages %>
+
+
+<div class="card-trip">
+      <%= cl_image_tag dog.picture.key, crop: :fill, width: 200 %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= dog.name %></h2>
+          <p><%= link_to '👀 Détail', dog_path %></p>
+        </div>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  </div>
