@@ -9,18 +9,20 @@
 <br>
 <br>
 <br>
-<div class="container display text-center">
+<div class="container">
+<div class=" display row row-cols-4 col-12 justify-center">
   <% @dogs.each do |dog| %>
     <div class="card-trip">
-      <%= cl_image_tag dog.picture.key, crop: :fill, width: 200 %>
-      <div class="card-trip-infos">
+      <%= cl_image_tag dog.picture.key, crop: :fill, width: 400 %>
+      <div class="card-trip-infos text-center ">
         <div>
           <h2><%= dog.name %></h2>
           <p><%= link_to '👀 Détail', dog %></p>
         </div>
-        <%= cl_image_tag dog.owner.picture.key, crop: :fill, width: 50 %>
+        <%= cl_image_tag dog.owner.picture.key, class: "avatar", crop: :fill, width: 50 %>
       </div>
     </div>
   <% end %>
+</div>
 </div>
 <!-- card -->
