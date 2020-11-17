@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
-User.destroy_all
 Walk.destroy_all
 Dog.destroy_all
+User.destroy_all
 
 # USERS -----------------------------------------------------------------------
 puts "Creating users..."
@@ -138,14 +138,14 @@ puts "Creating walks..."
 walk1 = Walk.create!(
   date_time: DateTime.new(2020, 11, 5,  10,  0,  0),
   user: user3,
-  dog: "Mimi",
+  dog: dog2,
   price: 2
 )
 
 walk2 = Walk.create!(
   date_time: DateTime.new(2020, 11, 17,  17,  0,  0),
   user: user4,
-  dog: "Pongo",
+  dog: dog5,
   price: 5
 )
 
@@ -153,7 +153,7 @@ walk2 = Walk.create!(
 walk3 = Walk.create!(
   date_time: DateTime.new(2020, 11, 20,  12,  0,  0),
   user: user3,
-  dog: "Milou",
+  dog: dog1,
   price: 4
 )
 
