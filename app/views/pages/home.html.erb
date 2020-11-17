@@ -1,10 +1,54 @@
 
+<body>
+  <div class="container">
+  <h1>Bienvenue !</h1>
+  <%= link_to "🐶 Trouver un chien 🐶", dogs_path, class: 'btn btn-primary' %>
+  </div>
+</body>
 
-<div class="container">
+<div class="container text-center">
 <h1>Bienvenue !</h1>
-<%= link_to "🐶 Trouver un chien 🐶", dogs_path, class: 'btn btn-primary' %>
+<%#= link_to "🐶 Trouver un chien 🐶", dogs_path, class: 'btn btn-primary' %>
 </div>
+<br>
+<br>
+<br>
+<br>
+<%# @dogs.each do |dog| %>
+  <div class="container display text-center">
+    <div class="card-trip">
+      <%#= cl_image_tag dog.picture.key, crop: :fill, width: 200 %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%#= dog.name %></h2>
+          <p><%#= link_to '👀 Détail', dog_path %></p>
+        </div>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
 
+    <div class="card-trip">
+      <%#= cl_image_tag dog.picture.key, crop: :fill, width: 200 %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%#= dog.name %></h2>
+          <p><%#= link_to '👀 Détail', dog_path %></p>
+        </div>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
 
+    <div class="card-trip">
+      <%#= cl_image_tag dog.picture.key, crop: :fill, width: 200 %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%#= dog.name %></h2>
+          <p><%#= link_to '👀 Détail', dog_path %></p>
+        </div>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  </div>
+ <%# end %>
 
 <!-- card -->
