@@ -1,0 +1,21 @@
+<div class="container">
+  <%= cl_image_tag @dog.photo.key, height: 300, width: 150, crop: :fill %>
+
+  <ul>
+    <li class="dog-name">Nom: <%= @dog.name %></li>
+    <li>Taille: <%= @dog.size %></li>
+    <li>Race: <%= @dog.breed %></li>
+    <li>Prix de la promenade: <%= @dog.rate %>/heure</li>
+    <li>Description de notre toutou: <%= @dog.description %></li>
+  </ul>
+
+  <div class="dog-owner-card">
+    <%= cl_image_tag @dog.owner.photo.key, height: 50, width: 50, crop: :fill %>
+    <h5><%= @dog.owner.name %></h5>
+    <p><%= @dog.owner.description %></p>
+  </div>
+
+  <%= link_to 'On part en balade ?', new_dog_walk_path %>
+
+  <%= link_to 'Les chiens près de chez vous', dogs_path %>
+</div>
