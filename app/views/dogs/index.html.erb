@@ -3,8 +3,9 @@
 
   <div class="cards">
   <% @dogs.each do |dog| %>
-    <div class="card-category">
-      <h5><%= link_to dog.name, dog %></h5>
+    <div class="card-trip">
+      <%= cl_image_tag dog.picture.key, crop: :fill %>
+      <h2><%= link_to dog.name, dog %></h2>
     </div>
   <% end %>
   </div>

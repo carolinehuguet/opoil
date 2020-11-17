@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>On part en balade !</h1>
+  </div>
+  <br>
+  <div class="row justify-content-center">
+      <%= cl_image_tag @dog.picture.key, height: 300, width: 300, crop: :fill %>
+        <ul>
+          <h2>Mon toutou</h2>
+          <li class="dog-name">Nom: <%= @dog.name %></li>
+          <li>Taille: <%= @dog.size %></li>
+          <li>Race: <%= @dog.breed %></li>
+          <li>Prix de la promenade: <%= @dog.rate %>/heure</li>
+          <li>Description de notre toutou: <%= @dog.description %></li>
+        </ul>
+  </div>
+  <br>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h3>Choisissez l'horaire de votre balade</h3>
+      <%= simple_form_for [@dog, @walk] do |f| %>
+        <%= f.input :date_time %>
+        <%= f.button :submit, "C'est parti !", class: 'btn btn-primary' %>
+      <% end %>
+     </div>
+  </div>
+</div>
