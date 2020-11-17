@@ -3,14 +3,17 @@
  <%#= card_hom_pages %>
 
 
-<div class="card-trip">
-      <%= cl_image_tag dog.picture.key, crop: :fill, width: 200 %>
-      <div class="card-trip-infos">
+<div class="item container display col-12">
+  <% @dogs.each do |dog| %>
+    <div class="card-trip ml-4 ">
+      <%= cl_image_tag dog.picture.key, crop: :fill, width: 400 %>
+      <div class="card-trip-infos text-center ">
         <div>
           <h2><%= dog.name %></h2>
-          <p><%= link_to '👀 Détail', dog_path %></p>
+          <p><%= link_to '👀 Détail', dog %></p>
         </div>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <%= cl_image_tag dog.owner.picture.key, class: "avatar", crop: :fill, width: 50 %>
       </div>
     </div>
-  </div>
+  <% end %>
+</div>
