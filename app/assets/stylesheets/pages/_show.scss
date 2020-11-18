@@ -1,0 +1,63 @@
+.card-owner {
+  width: 400px;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-owner img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-owner p {
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-owner .card-owner-infos {
+  padding: 16px;
+}
+
+.dog-photo {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.dog-info {
+  width: 400px;
+  padding-top: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+.dog-info {
+  ul{
+    list-style-type: none;
+  }
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
