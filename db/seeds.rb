@@ -132,6 +132,7 @@ dog6 = Dog.new(
 dog6.picture.attach(io: File.open(Rails.root.join('db/fixtures/dogs/dog_pic_6.jpg')), filename: 'dog_pic_6.jpg')
 dog6.save!
 
+
 # WALKS -----------------------------------------------------------------------
 puts "Creating walks..."
 
@@ -149,7 +150,6 @@ walk2 = Walk.create!(
   price: 5
 )
 
-
 walk3 = Walk.create!(
   date_time: DateTime.new(2020, 11, 20,  12,  0,  0),
   user: user3,
@@ -157,4 +157,24 @@ walk3 = Walk.create!(
   price: 4
 )
 
+walk4 = Walk.create!(
+  date_time: DateTime.new(2020, 11, 20,  18,  0,  0),
+  user: user3,
+  dog: dog3,
+  price: 3
+)
+
+walk5 = Walk.create!(
+  date_time: DateTime.new(2020, 11, 4,  10,  0,  0),
+  user: user3,
+  dog: dog3,
+  price: 3
+)
+
+walk6 = Walk.create!(
+  date_time: DateTime.new(2020, 11, 3,  17,  0,  0),
+  user: user3,
+  dog: dog3,
+  price: 3
+)
 puts "Finished!"
