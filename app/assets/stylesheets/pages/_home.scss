@@ -1,12 +1,16 @@
 // Specific CSS for your home-page
 h1 {
-  padding-top: 40px;
+  // padding-top: 120px;
   font-size: 60px;
 }
 
 .background-image {
-  background-image: url('https://res.cloudinary.com/dlu9wclb0/image/upload/v1605699136/background-image-2_oqcahu.jpg');
+  background-image: url('https://res.cloudinary.com/dlu9wclb0/image/upload/v1605702455/background-image-gris_xokume.jpg');
   background-size: cover;
   // background-repeat: repeat;
   background-position:center center;
+}
+
+.home-container {
+  height: calc(100vh - 90px)
 }
