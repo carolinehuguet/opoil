@@ -44,6 +44,9 @@
   width: 40px;
  }
 }
-.display {
 
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
