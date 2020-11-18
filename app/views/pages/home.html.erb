@@ -1,4 +1,5 @@
-<div class="container text-center">
+<div class="container text-center d-flex flex-column justify-content-center home-container">
+<div>
   <h1 class="mb-4">Bienvenue !</h1>
   <%= link_to "🐶 Trouver un chien 🐶", dogs_path, class: 'btn btn-primary' %>
 </div>
@@ -6,7 +7,8 @@
 <br>
 <br>
 <br>
-<div class="container">
+<div class="container text-center">
+  <h3 class="mb-4">Les chiens près de chez moi</h3>
 <div class="grid display row row-cols-4 col-12">
   <% @dogs.each do |dog| %>
     <div class="card-trip">
@@ -20,6 +22,7 @@
       </div>
     </div>
   <% end %>
+</div>
 </div>
 </div>
 <!-- card -->
