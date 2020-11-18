@@ -1,22 +1,31 @@
-<div class="container">
-  <%= cl_image_tag @dog.picture.key, height: 300, width: 300, crop: :fill %>
+<div class="container flexbox ">
 
-  <ul>
-    <li class="dog-name">Nom: <%= @dog.name %></li>
-    <li>Taille: <%= @dog.size %></li>
-    <li>Race: <%= @dog.breed %></li>
-    <li>Prix de la promenade: <%= @dog.rate %>€/heure</li>
-    <li>Description de notre toutou: <%= @dog.description %></li>
-  </ul>
-
-  <div class="dog-owner-card">
-    <%= cl_image_tag @dog.owner.picture.key, height: 50, width: 50, crop: :fill %>
-    <h5><%= @dog.owner.name %></h5>
-    <p><%= @dog.owner.description %></p>
+  <div class="dog-photo">
+    <%= cl_image_tag @dog.picture.key, height: 500, width: 400, crop: :fill %>
   </div>
 
-  <%# à décommenter %>
-  <%#<%= link_to 'On part en balade ?', new_dog_walk_path %>
-
-  <%= link_to 'Les chiens près de chez vous', dogs_path %>
+  <div class="show-info">
+    <div class="dog-info">
+      <ul>
+        <li class="dog-name"><strong>Nom: <%= @dog.name %></strong></li>
+        <li>Taille: <%= @dog.size %></li>
+        <li>Race: <%= @dog.breed %></li>
+        <li>Prix de la promenade: <%= @dog.rate %>€/heure</li>
+        <li>Description de notre toutou: <%= @dog.description %></li>
+      </ul>
+    </div>
+  <br>
+    <div class="card-owner">
+      <%= cl_image_tag @dog.owner.picture.key, crop: :fill %>
+      <div class="card-owner-infos">
+        <h2><%= @dog.owner.name %></h2>
+        <p><%= @dog.owner.description %></p>
+      </div>
+    </div>
+  <br>
+    <%= link_to "On part en balade ?", new_dog_walk_path(@dog), class: "btn btn-success" %>
+     <br>
+     <br>
+    <%= link_to "Les autres chiens près de chez vous", dogs_path, class: "btn btn-primary" %>
+  </div>
 </div>
