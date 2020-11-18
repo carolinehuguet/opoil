@@ -21,7 +21,7 @@
       <h3>Choisissez l'horaire de votre balade</h3>
       <%= simple_form_for [@dog, @walk] do |f| %>
         <%= f.input :date_time %>
-        <%= link_to "C'est parti !", dashboard_path, class: 'btn btn-primary' %>
+        <%= f.submit "C'est parti !", class: 'btn btn-primary' %>
       <% end %>
      </div>
   </div>
