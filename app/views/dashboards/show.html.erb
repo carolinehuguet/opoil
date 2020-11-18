@@ -1,0 +1,65 @@
+<h1 class="text-center">Mon espace personnel</h1>
+
+
+<%# ONGLET WALKS %>
+<h3 class="text-center">Mes promenades</h3>
+
+<div class="container d-flex justify-content-between">
+  <% @walks.each do |walk| %>
+  <%# Si la date_time est passée %>
+    <div class="card-trip">
+      <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+        <%# Nom du chien %>
+          <h2><%= walk.dog.name %></h2>
+        <%# C'était le ... %>
+          <p>C'était le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
+        <%= cl_image_tag walk.dog.owner.picture.key, height: 50, width: 50, crop: :fill  %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%# Si la date_time est à venir %>
+
+<%# Si la demande est en attente %>
+
+<%# ONGLET DOGS %>
+<h3 class="text-center">Mes chiens</h3>
+
+<div class="container d-flex justify-content-between">
+  <% @dogs.each do |dog| %>
+    <div class="card-trip">
+      <%= cl_image_tag dog.picture.key, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= dog.name %></h2>
+          <p><%= dog.description %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= dog.rate %> €</h2>
+        <%= cl_image_tag dog.owner.picture.key, height: 50, width: 50, crop: :fill  %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%# ONGLET MY DOGS WALKS %>
+<h3 class="text-center">Les promenades de mes chiens</h3>
+
+<div class="container d-flex justify-content-between">
+  <% @my_dog_walks.each do |my_dog_walk| %>
+    <div class="card-trip">
+      <%= cl_image_tag my_dog_walk.dog.picture.key, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= my_dog_walk.dog.name %></h2>
+          <p>C'était le <%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= my_dog_walk.dog.rate %> €</h2>
+        <%= cl_image_tag my_dog_walk.user.picture.key, height: 50, width: 50, crop: :fill  %>
+      </div>
+    </div>
+  <% end %>
+</div>
