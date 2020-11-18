@@ -15,9 +15,9 @@
           <h2><%= walk.dog.name %></h2>
         <%# C'était le ... %>
           <p>C'était le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
+          <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
         </div>
-        <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
-        <%= cl_image_tag walk.dog.owner.picture.key, height: 50, width: 50, crop: :fill  %>
+        <%= cl_image_tag walk.dog.owner.picture.key, class: "avatar", height: 50, width: 50, crop: :fill  %>
       </div>
     </div>
   <% end %>
