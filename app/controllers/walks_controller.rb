@@ -10,12 +10,18 @@ class WalksController < ApplicationController
     @user = current_user
     @walk = Walk.new(walk_params)
     @walk.user = @user
-    @walk.save
+    @walk.dog = @dog
+    @walk.price = @dog.rate
+    if @walk.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   private
 
   def walk_params
-    params.require(:walk).permit(:date_time, :user_id, :dog_id, :status, :price)
+    params.require(:walk).permit(:date_time)
   end
 end
