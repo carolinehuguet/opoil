@@ -53,13 +53,14 @@
 
   .card-user {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     margin-bottom: 120px;
 
     .card-user-name {
-      font-size: 25px;
-    }
+    font-size: 25px;
+  }
+
   }
 
   .card-user > img {
@@ -75,13 +76,6 @@
   }
 
 }
-
-
-
-
-
-
-
 
 .bg {
   background-color: #e95800;
