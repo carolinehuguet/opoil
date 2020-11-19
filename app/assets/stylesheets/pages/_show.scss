@@ -61,3 +61,39 @@
   background: #1BCB7F;
   color: white;
 }
+
+.link-text {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 280px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  opacity: 0;
+}
+
+.link-dog:hover {
+    text-decoration: none;
+  }
+
+.opacity-color div:hover .link-text {
+  opacity: 1;
+}
+
+.opacity-color div {
+background: #e95800;
+}
+
+.opacity-color .dog-photo {
+  background: #e95800;
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.opacity-color div:hover .dog-photo {
+  opacity: .1;
+}
+
+

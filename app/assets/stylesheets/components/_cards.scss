@@ -83,10 +83,16 @@
 
 
 
-
+.bg {
+  background-color: #e95800;
+  opacity: 0.5;
+  width:100%;
+  height:100%;
+}
 
 .card-trip {
-  width: 300px;
+  position: relative;
+  width: 280px;
   overflow: hidden;
   background: white;
   box-shadow: rgba(50, 50, 93, 0.10) 0px 50px 150px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -95,12 +101,17 @@
 }
 
 .card-trip > img {
+  background: white;
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-trip h2 {
+  color: #000;
+  hover: #000;
+  text-align: left;
+  background: white;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -108,14 +119,16 @@
 
 .card-trip {
   p {
+  color: #000;
+  background: white;
   font-size: 12px;
-  opacity: .7;
   margin: 0;
 }
 }
 
 .card-trip {
   .card-trip-infos {
+  background: white;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -126,6 +139,7 @@
 
 .card-trip-infos {
   .card-trip-user {
+  background-color: #fff;
   position: absolute;
   right: 16px;
   top: -20px;
