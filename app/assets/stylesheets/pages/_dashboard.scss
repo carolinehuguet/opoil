@@ -1,2 +1,71 @@
 // Import page-specific CSS files here.
 @import "components/walk_request";
+
+.card-dog-dash {
+  background: white;
+  width: 600;
+  height: 450;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.10) 0px 50px 150px -20px;
+
+  .btn-warning {
+    color: #e95800;
+  }
+
+  .card-actions-dash {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    align-items: flex-end;
+  }
+
+  .card-info-dash {
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 18px;
+    }
+  }
+
+  .card-img-dog-dash {
+    width: 50%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card-description {
+    width: 50%;
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .card-title {
+    // min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card-name {
+    }
+
+    .card-price {
+      font-size: 35px;
+      display: flex;
+      color: #e95800;
+
+      .price-currency {
+        font-size: 15px;
+      }
+
+    }
+  }
+}

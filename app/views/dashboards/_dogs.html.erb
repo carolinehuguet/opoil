@@ -1,19 +1,33 @@
 <h3 class="text-center">Mes chiens</h3>
 
 <div class="container d-flex justify-content-between">
-  <% @dogs.each do |dog| %>
-    <div class="card-trip">
-      <%= cl_image_tag dog.picture.key, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= dog.name %></h2>
-          <p><%= dog.description %></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= dog.rate %> €</h2>
-        <%= cl_image_tag dog.owner.picture.key, height: 50, width: 50, crop: :fill  %>
-      </div>
-       <%= link_to "Supprimer le profil", dog_path(dog), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer le profil de #{dog.name} ?"}  %>
-       <%= link_to "Modifier les infos", edit_dog_path(dog), class: "btn btn-primary" %>
+<% @dogs.each do |dog| %>
+  <div class="card-dog-dash">
+    <div class="card-img-dog-dash">
+      <%= cl_image_tag dog.picture.key %>
     </div>
-  <% end %>
+    <div class="card-description">
+      <div class="card-title">
+        <div class="card-name">
+          <h1><%= dog.name %></h1>
+        </div>
+        <div class="card-price">
+          <div><%= dog.rate %></div>
+          <div class="price-currency">€/h</div>
+        </div>
+      </div>
+      <div class="card-info-dash mt-2">
+        <ul>
+          <li>Gabarit : <%= dog.size %></li>
+          <li><%= dog.breed %></li>
+          <li><%= dog.description %></li>
+        </ul>
+      </div>
+      <div class="card-actions-dash text-center">
+        <%= link_to "Supprimer le profil", dog_path(dog), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer le profil de #{dog.name} ?"}, class: "btn btn-warning"  %>
+        <%= link_to "Modifier les infos", edit_dog_path(dog), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
 </div>
