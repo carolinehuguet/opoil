@@ -12,7 +12,8 @@ class WalksController < ApplicationController
     @walk.user = @user
     @walk.dog = @dog
     @walk.price = @dog.rate
-    if @walk.save
+    @walk.status = "pending"
+    if @walk.save!
       redirect_to dashboard_path
     else
       render :new
@@ -36,6 +37,6 @@ class WalksController < ApplicationController
   private
 
   def walk_params
-    params.require(:walk).permit(:date_time)
+    params.require(:walk).permit(:date_time, :status)
   end
 end
