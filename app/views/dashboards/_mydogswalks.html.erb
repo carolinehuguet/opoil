@@ -1,0 +1,17 @@
+<h3 class="text-center">Les promenades de mes chiens</h3>
+
+<div class="container d-flex justify-content-between">
+  <% @my_dog_walks.each do |my_dog_walk| %>
+    <div class="card-trip">
+      <%= cl_image_tag my_dog_walk.dog.picture.key, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= my_dog_walk.dog.name %></h2>
+          <p>C'était le <%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= my_dog_walk.dog.rate %> €</h2>
+        <%= cl_image_tag my_dog_walk.user.picture.key, height: 50, width: 50, crop: :fill  %>
+      </div>
+    </div>
+  <% end %>
+</div>

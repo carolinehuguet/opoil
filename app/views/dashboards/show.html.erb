@@ -1,109 +1,17 @@
 <%# ACCEPT/DENY WALKS %>
-<% @my_dog_walks.each do |my_dog_walk| %>
-  <% if my_dog_walk.status == "pending" %>
-    <div class="walk-request container text-center">
-      <h2 class="walk-request-title"><%= my_dog_walk.user.name %> veut promener <%= my_dog_walk.dog.name %> !</h2>
-      <h4 class="my-3">le <%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></h4>
-      <div class="user-card-request container d-flex justify-content-center col-6 my-4">
-        <%= cl_image_tag my_dog_walk.user.picture.key, class: "avatar-rounded background-grey", height: 200, width: 200, crop: :fill  %>
-        <div class="container text-left mx-3 col-7 background-light">
-          <p class="user-card-request-name"><%= my_dog_walk.user.name %></p>
-          <p><%= my_dog_walk.user.description %></p>
-        </div>
-      </div>
-      <p><%= my_dog_walk.user.name %> attend impatiemment votre retour !</p>
-      <div class="m-2 flex-column">
-        <%= link_to "Accepter", accept_walk_path(my_dog_walk), method: :patch, class: "btn btn-primary mx-1" %>
-        <%= link_to "Refuser", deny_walk_path(my_dog_walk), method: :patch, class: "mx-1" %>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+<%= render "acceptwalks" %>
 
 <h1 class="text-center padding">Mon espace personnel</h1>
 
 <%# ONGLET WALKS %>
-<h3 class="text-center">Mes promenades</h3>
-
-<div class="container d-flex justify-content-between">
-  <% @walks.each do |walk| %>
-    <%# Pour n'afficher que les promenades futures ou passées %>
-    <% unless walk.status == "cancelled" %>
-      <div class="card-trip">
-        <%# Si la date_time est passée %>
-        <% if walk.date_time < DateTime.now %>
-          <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
-          <div class="card-trip-infos">
-            <div>
-            <%# Nom du chien %>
-              <h2><%= walk.dog.name %></h2>
-            <%# C'était le ... %>
-              <p>C'était le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
-              <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
-            </div>
-            <%= cl_image_tag walk.dog.owner.picture.key, class: "avatar", height: 50, width: 50, crop: :fill  %>
-          </div>
-          <%# Si la date_time est à venir %>
-          <% else %>
-          <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
-            <div class="card-trip-infos">
-              <div>
-              <%# Nom du chien %>
-                <h2><%= walk.dog.name %></h2>
-              <%# C'était le ... %>
-                <p>Ce sera le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
-                <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
-              </div>
-              <%= cl_image_tag walk.dog.owner.picture.key, class: "avatar", height: 50, width: 50, crop: :fill  %>
-              <%= link_to "Annuler", cancel_walk_path(walk), method: :patch, data: { confirm: "Êtes-vous sûr(e) de vouloir annuler votre promenade avec #{walk.dog.name} ?"}, class: "btn btn-primary mt-4 mb-3" %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
- <% end %>
-</div>
+<%= render "walks" %>
 
 
 
 <%# Si la demande est en attente %>
 
 <%# ONGLET DOGS %>
-<h3 class="text-center">Mes chiens</h3>
-
-<div class="container d-flex justify-content-between">
-  <% @dogs.each do |dog| %>
-    <div class="card-trip">
-      <%= cl_image_tag dog.picture.key, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= dog.name %></h2>
-          <p><%= dog.description %></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= dog.rate %> €</h2>
-        <%= cl_image_tag dog.owner.picture.key, height: 50, width: 50, crop: :fill  %>
-      </div>
-       <%= link_to "Supprimer le profil", dog_path(dog), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer le profil de #{dog.name} ?"}  %>
-       <%= link_to "Modifier les infos", edit_dog_path(dog), class: "btn btn-primary" %>
-    </div>
-  <% end %>
-</div>
+<%= render "dogs" %>
 
 <%# ONGLET MY DOGS WALKS %>
-<h3 class="text-center">Les promenades de mes chiens</h3>
-
-<div class="container d-flex justify-content-between">
-  <% @my_dog_walks.each do |my_dog_walk| %>
-    <div class="card-trip">
-      <%= cl_image_tag my_dog_walk.dog.picture.key, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= my_dog_walk.dog.name %></h2>
-          <p>C'était le <%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= my_dog_walk.dog.rate %> €</h2>
-        <%= cl_image_tag my_dog_walk.user.picture.key, height: 50, width: 50, crop: :fill  %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render "mydogswalks" %>

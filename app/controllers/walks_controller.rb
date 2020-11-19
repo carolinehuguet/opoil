@@ -13,7 +13,7 @@ class WalksController < ApplicationController
     @walk.dog = @dog
     @walk.price = @dog.rate
     @walk.status = "pending"
-    if @walk.save!
+    if @walk.save
       redirect_to dashboard_path
     else
       render :new
@@ -23,7 +23,7 @@ class WalksController < ApplicationController
   def accept
     @walk = Walk.find(params[:id])
     @walk.status = "accepted"
-    @walk.save!
+    @walk.save
     redirect_to dashboard_path
   end
 
