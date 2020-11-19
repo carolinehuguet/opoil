@@ -31,7 +31,7 @@
     <% unless walk.status == "cancelled" %>
       <div class="card-trip">
         <%# Si la date_time est passée %>
-        <% if walk.date_time < Time.now %>
+        <% if walk.date_time < DateTime.now %>
           <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
           <div class="card-trip-infos">
             <div>
