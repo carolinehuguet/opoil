@@ -33,6 +33,14 @@ class WalksController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def cancel
+    @walk = Walk.find(params[:id])
+    @walk.status = "cancelled"
+    @walk.save!
+
+    redirect_to dashboard_path
+  end
+
   private
 
   def walk_params
