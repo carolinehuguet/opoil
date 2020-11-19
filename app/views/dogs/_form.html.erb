@@ -2,6 +2,7 @@
   <%= f.input :name, label: "Nom" %>
   <%= f.input :size, :collection => ['petit','moyen','grand'], label: "Taille" %>
   <%= f.input :breed, label: "Race" %>
+  <%= f.input :address, label: "Adresse" %>
   <%= f.input :rate, input_html: { type: 'number' }, label: "Prix de la promenade par heure" %>
   <%= f.input :picture, as: :file, label: "Photo du chien" %>
   <%= f.input :description, as: :text, :input_html => { class: 'test', :cols => 5, :rows => 10 }, label: "Description" %>

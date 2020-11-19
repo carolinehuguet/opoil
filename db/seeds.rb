@@ -307,6 +307,7 @@ dog1 = Dog.new(
   breed: 'Fox-terrier',
   rate: 4,
   size: "petit",
+  address: '1 Rue du Général Maurice Guillaudot, Rennes',
   description: "Petit chien très intelligent, peut vous aider à résoudre des enquêtes."
 )
 
@@ -319,6 +320,7 @@ dog2 = Dog.new(
   breed: 'Berger allemand',
   rate: 2,
   size: "grand",
+  address: '1 Rue du Général Maurice Guillaudot, Rennes',
   description: "Beau chien docile. Attention, Mimi n'aime pas les chats !"
 )
 
@@ -331,6 +333,7 @@ dog3 = Dog.new(
   breed: 'Caniche nain',
   rate: 3,
   size: "petit",
+  address: 'Rue Robelin, Rennes',
   description: "Adorable petit caniche ! Beethoven aime les câlins et les enfants."
 )
 
@@ -343,6 +346,7 @@ dog4 = Dog.new(
   breed: 'Beagle',
   rate: 4,
   size: "moyen",
+  address: 'Boulevard de la Liberté, Rennes',
   description: "Chien gentil"
 )
 
@@ -355,6 +359,7 @@ dog5 = Dog.new(
   breed: 'Dalmatien',
   rate: 5,
   size: "grand",
+  address: 'Boulevard de la Liberté, Rennes',
   description: "Magnifique dalmatien. Ne pas transformer en manteau svp !"
 )
 
@@ -367,6 +372,7 @@ dog6 = Dog.new(
   breed: 'Colley',
   rate: 5,
   size: "grand",
+  address: '1 Rue du Général Maurice Guillaudot, Rennes',
   description: "Chien fidèle"
 )
 
@@ -379,6 +385,7 @@ dog7 = Dog.new(
   breed: 'Bulldog anglais',
   rate: 2,
   size: "moyen",
+  address: 'Boulevard de Sévigné, Rennes',
   description: "il n'est pas cloné"
 )
 
@@ -391,6 +398,7 @@ dog8 = Dog.new(
   breed: 'Labrador',
   rate: 4,
   size: "grand",
+  address: 'Rue de Strasbourg, Nantes',
   description: "il adore les souris"
 )
 
@@ -403,6 +411,7 @@ dog9 = Dog.new(
   breed: 'Chihuahua',
   rate: 6,
   size: "petit",
+  address: 'Rue de la Bastille, Nantes',
   description: "Elle rêve de découvrir les étoiles"
 )
 
@@ -415,6 +424,7 @@ dog10 = Dog.new(
   breed: 'Teckel',
   rate: 2,
   size: "petit",
+  address: 'Rue du Sacré Coeur, Nantes',
   description: "Toutou un peu barré qui se prend pour un aviateur"
 )
 
@@ -427,6 +437,7 @@ dog11 = Dog.new(
   breed: 'Husky',
   rate: 5,
   size: "grand",
+  address: 'Boulevard des Poilus, Nantes',
   description: "A promener en laisse ou en traineau"
 )
 
@@ -439,7 +450,8 @@ dog12 = Dog.new(
   breed: 'Rottweiler',
   rate: 3,
   size: "grand",
-  description: "❗️Il va essayer de vous rendre de la nourriture"
+  address: 'Rue Ginguené, Rennes',
+  description: "❗️Il va essayer de vous vendre de la nourriture"
 )
 
 dog12.picture.attach(io: File.open(Rails.root.join('db/fixtures/dogs/dog_pic_12.jpg')), filename: 'dog_pic_12.jpg')
@@ -451,6 +463,7 @@ dog13 = Dog.new(
   breed: 'Levrier greyhound',
   rate: 4,
   size: "grand",
+  address: 'Passage Robin, Nantes',
   description: "Adore courir"
 )
 
@@ -463,6 +476,7 @@ dog14 = Dog.new(
   breed: 'Dog allemand',
   rate: 4,
   size: "grand",
+  address: 'Rue Paul Bert, Rennes',
   description: "Très bon chien de garde"
 )
 
@@ -475,6 +489,7 @@ dog15 = Dog.new(
   breed: 'Bichon maltais',
   rate: 2,
   size: "petit",
+  address: 'Rue Baudrairie Rennes',
   description: "J'attends toujours que mon maître rentre du travail"
 )
 
@@ -487,6 +502,7 @@ dog17 = Dog.new(
   breed: 'Chien chinois à crête',
   rate: 8,
   size: "petit",
+  address: 'Rue de Brest Rennes',
   description: "A déjà été invité à la maison blanche"
 )
 
@@ -499,6 +515,7 @@ dog16 = Dog.new(
   breed: 'Dobermann',
   rate: 4,
   size: "grand",
+  address: 'Rue du Père Janvier, Rennes',
   description: "J'ai pas mal de film à mon actif"
 )
 
@@ -511,6 +528,7 @@ dog18 = Dog.new(
   breed: 'Cavalier King Charles',
   rate: 3,
   size: "petit",
+  address: 'Rue Jules Simon, Nantes',
   description: "chien peureux"
 )
 
@@ -523,6 +541,7 @@ dog19 = Dog.new(
   breed: 'Border collie',
   rate: 6,
   size: "moyen",
+  address: 'Rue Sarrazin, Nantes',
   description: "chien intelligent"
 )
 
@@ -535,6 +554,7 @@ dog20 = Dog.new(
   breed: 'Spitz nain',
   rate: 2,
   size: "petit",
+  address: 'Rue du Capitaine Maignan, Rennes',
   description: "chien rusé avec un flair infaillible."
 )
 
@@ -547,6 +567,7 @@ dog21 = Dog.new(
   breed: 'Bouvier bernois',
   rate: 5,
   size: "grand",
+  address: '60 Rue Danton, Rennes',
   description: "A révolutionné le monde de l’art."
 )
 
@@ -559,6 +580,7 @@ dog22 = Dog.new(
   breed: 'Setter irlandais rouge',
   rate: 3,
   size: "grand",
+  address: 'Allée des Patissiaux, Cesson-Sévigné',
   description: "Aime les longues balades en bord de mer."
 )
 
@@ -571,6 +593,7 @@ dog23 = Dog.new(
   breed: 'Terre-neuve',
   rate: 3,
   size: "grand",
+  address: 'Rue de Belle Epine, Cesson-Sévigné',
   description: "Elle n'est pas facile avec les autres chiens."
 )
 
@@ -583,6 +606,7 @@ dog24 = Dog.new(
   breed: 'Dalmatien',
   rate: 6,
   size: "grand",
+  address: '2 avenue de la Porte Dauphiné, La rochelle',
   description: "Il adore regarder la télé."
 )
 
@@ -595,6 +619,7 @@ dog25 = Dog.new(
   breed: 'Batard',
   rate: 2,
   size: "moyen",
+  address: 'Rue du Réage, Cesson-Sévigné',
   description: "Il est dynamique il adore jouer et faire des bisous à tout le monde"
 )
 
@@ -607,6 +632,7 @@ dog26 = Dog.new(
   breed: 'Saint bernard',
   rate: 4,
   size: "grand",
+  address: 'Rue du Blavet, Saint-Grégoire',
   description: "Elle est très calme et gentille, mais elle est TRES craintive avec les inconnus."
 )
 
@@ -619,6 +645,7 @@ dog27 = Dog.new(
   breed: 'Chow-chow',
   rate: 3,
   size: "moyen",
+  address: 'Rue du Trieux, Saint-Grégoire',
   description: "Vraiment très calme et mignonne."
 )
 
@@ -631,6 +658,7 @@ dog28 = Dog.new(
   breed: 'American Staff',
   rate: 5,
   size: "grand",
+  address: 'Boulevard des Poilus, Nantes',
   description: "Très affectueux."
 )
 
@@ -643,6 +671,7 @@ dog31 = Dog.new(
   breed: 'Shar-peï',
   rate: 3,
   size: "moyen",
+  address: 'Rue de la Bellangerais, Rennes',
   description: "Il aime manger des madeleines et du jambon."
 )
 
