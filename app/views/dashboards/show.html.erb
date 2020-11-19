@@ -41,6 +41,7 @@
         <%= cl_image_tag dog.owner.picture.key, height: 50, width: 50, crop: :fill  %>
       </div>
        <%= link_to "Supprimer le profil", dog_path(dog), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer le profil de #{dog.name} ?"}  %>
+       <%= link_to "Modifier les infos", edit_dog_path(dog), class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
