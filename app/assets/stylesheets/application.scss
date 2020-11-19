@@ -12,3 +12,20 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+
+.padding {
+  padding-top: 100px;
+}
+
+.padding-card {
+  padding: 20px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back_link {
+}
