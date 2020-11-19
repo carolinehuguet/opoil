@@ -1,15 +1,15 @@
-<div class="container text-center d-flex flex-column justify-content-center home-container">
-<div>
+<div class="welcome">
+  <div class="container">
   <h1>Bienvenue</h1>
   <h3 class="mb-5">dans la plus grande communauté <br>de promeneurs de chien au monde</h3>
   <%= link_to "🐶 Trouver un chien 🐶", dogs_path, class: 'btn btn-primary' %>
+  </div>
 </div>
-<br>
-<br>
-<br>
-<br>
+
+<div class="container text-center d-flex flex-column justify-content-center">
+</div>
 <div class="container text-center">
-  <h3 class="mb-4">Les chiens préférés</h3>
+  <h3 class="mt-5 mb-4">Quelques toutous inscrits récemment</h3>
 <div class="grid display row row-cols-4 col-12 opacity-color">
   <% @dogs.each do |dog| %>
     <%= link_to dog, class: "link-dog" do %>

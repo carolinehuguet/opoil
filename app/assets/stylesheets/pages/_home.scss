@@ -4,6 +4,21 @@ h1 {
   font-size: 60px;
 }
 
+.welcome {
+  background-size: cover;
+  height: 450px;
+  text-align: center;
+  background-image: url('https://res.cloudinary.com/dlu9wclb0/image/upload/v1605806875/walk-dog-black_gewhhr.jpg');
+  background-position: center;
+  background-size: 100%;
+  color: #fff;
+  filter: gray saturate(0%) brightness(70%) contrast(1000%);
+
+  h1 {
+    padding-top: 100px;
+  }
+}
+
 .background-image {
   background-image: url('https://res.cloudinary.com/dlu9wclb0/image/upload/v1605702455/background-image-gris_xokume.jpg');
   background-size: cover;
