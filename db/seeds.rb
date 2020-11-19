@@ -140,41 +140,47 @@ walk1 = Walk.create!(
   date_time: DateTime.new(2020, 11, 5,  10,  0,  0),
   user: user3,
   dog: dog2,
-  price: 2
+  price: 2,
+  status: "pending"
 )
 
 walk2 = Walk.create!(
   date_time: DateTime.new(2020, 11, 17,  17,  0,  0),
   user: user4,
   dog: dog5,
-  price: 5
+  price: 5,
+  status: "pending"
 )
 
 walk3 = Walk.create!(
   date_time: DateTime.new(2020, 11, 20,  12,  0,  0),
   user: user3,
   dog: dog1,
-  price: 4
+  price: 4,
+  status: "pending"
 )
 
 walk4 = Walk.create!(
   date_time: DateTime.new(2020, 11, 20,  18,  0,  0),
   user: user3,
   dog: dog3,
-  price: 3
+  price: 3,
+  status: "pending"
 )
 
 walk5 = Walk.create!(
   date_time: DateTime.new(2020, 11, 4,  10,  0,  0),
   user: user3,
   dog: dog3,
-  price: 3
+  price: 3,
+  status: "denied"
 )
 
 walk6 = Walk.create!(
   date_time: DateTime.new(2020, 11, 3,  17,  0,  0),
   user: user3,
   dog: dog3,
-  price: 3
+  price: 3,
+  status: "accepted"
 )
 puts "Finished!"
