@@ -27,23 +27,44 @@
 
 <div class="container d-flex justify-content-between">
   <% @walks.each do |walk| %>
-  <%# Si la date_time est passée %>
-    <div class="card-trip">
-      <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-        <%# Nom du chien %>
-          <h2><%= walk.dog.name %></h2>
-        <%# C'était le ... %>
-          <p>C'était le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
-          <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
-        </div>
-        <%= cl_image_tag walk.dog.owner.picture.key, class: "avatar", height: 50, width: 50, crop: :fill  %>
+    <%# Pour n'afficher que les promenades futures ou passées %>
+    <% unless walk.status == "cancelled" %>
+      <div class="card-trip">
+        <%# Si la date_time est passée %>
+        <% if walk.date_time < DateTime.now %>
+          <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
+          <div class="card-trip-infos">
+            <div>
+            <%# Nom du chien %>
+              <h2><%= walk.dog.name %></h2>
+            <%# C'était le ... %>
+              <p>C'était le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
+              <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
+            </div>
+            <%= cl_image_tag walk.dog.owner.picture.key, class: "avatar", height: 50, width: 50, crop: :fill  %>
+          </div>
+          <%# Si la date_time est à venir %>
+          <% else %>
+          <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+              <%# Nom du chien %>
+                <h2><%= walk.dog.name %></h2>
+              <%# C'était le ... %>
+                <p>Ce sera le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
+                <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
+              </div>
+              <%= cl_image_tag walk.dog.owner.picture.key, class: "avatar", height: 50, width: 50, crop: :fill  %>
+              <%= link_to "Annuler", cancel_walk_path(walk), method: :patch, data: { confirm: "Êtes-vous sûr(e) de vouloir annuler votre promenade avec #{walk.dog.name} ?"}, class: "btn btn-primary mt-4 mb-3" %>
+            </div>
+          </div>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+ <% end %>
 </div>
-<%# Si la date_time est à venir %>
+
+
 
 <%# Si la demande est en attente %>
 
