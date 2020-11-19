@@ -700,4 +700,5 @@ walk6 = Walk.create!(
   status: "accepted",
   price: 3
 )
+
 puts "Finished!"

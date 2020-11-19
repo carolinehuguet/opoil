@@ -1,3 +1,25 @@
+<%# ACCEPT/DENY WALKS %>
+<% @my_dog_walks.each do |my_dog_walk| %>
+  <% if my_dog_walk.status == "pending" %>
+    <div class="new-request container text-center">
+      <h2 class="blue-title"><%= my_dog_walk.user.name %> veut promener <%= my_dog_walk.dog.name %></h2>
+      <h3 class="font-weight-bold my-5">le <%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></h3>
+      <div class="container d-flex col-8">
+        <%= cl_image_tag my_dog_walk.user.picture.key, height: 200, width: 200, crop: :fill  %>
+        <div class="container text-left col-6">
+          <p class="font-weight-bold"><%= my_dog_walk.user.name %></p>
+          <p><%= my_dog_walk.user.description %></p>
+        </div>
+      </div>
+      <p class="mt-5"><%= my_dog_walk.user.name %> attend impatiemment votre retour !</p>
+      <div class="mt-5">
+        <%= link_to "Accepter", accept_walk_path(my_dog_walk), method: :patch, class: "btn btn-primary" %>
+        <%= link_to "Refuser", deny_walk_path(my_dog_walk), method: :patch %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <h1 class="text-center padding">Mon espace personnel</h1>
 
 <%# ONGLET WALKS %>

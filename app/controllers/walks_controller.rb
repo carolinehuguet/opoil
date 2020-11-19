@@ -19,6 +19,20 @@ class WalksController < ApplicationController
     end
   end
 
+  def accept
+    @walk = Walk.find(params[:id])
+    @walk.status = "accepted"
+    @walk.save!
+    redirect_to dashboard_path
+  end
+
+  def deny
+    @walk = Walk.find(params[:id])
+    @walk.status = "denied"
+    @walk.save!
+    redirect_to dashboard_path
+  end
+
   private
 
   def walk_params
