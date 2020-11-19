@@ -10,18 +10,21 @@
 <br>
 <div class="container text-center">
   <h3 class="mb-4">Les chiens préférés</h3>
-<div class="grid display row row-cols-4 col-12">
+<div class="grid display row row-cols-4 col-12 opacity-color">
   <% @dogs.each do |dog| %>
+    <%= link_to dog, class: "link-dog" do %>
     <div class="card-trip">
-      <%= cl_image_tag dog.picture.key, crop: :fill, width: 400 %>
+      <div class="link-text">👀 Détail</div>
+      <%= cl_image_tag dog.picture.key, crop: :fill, width: 400, class: "dog-photo"%>
       <div class="card-trip-infos text-center ">
         <div>
           <h2><%= dog.name %></h2>
-          <p><%= link_to '👀 Détail', dog %></p>
+          <p>Propriétaire : <%= dog.owner.name %></p>
         </div>
         <%= cl_image_tag dog.owner.picture.key, class: "avatar", crop: :fill, width: 50 %>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
 </div>
