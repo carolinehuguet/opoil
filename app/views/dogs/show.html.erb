@@ -1,31 +1,37 @@
-<div class="container flexbox ">
-
-  <div class="dog-photo">
-    <%= cl_image_tag @dog.picture.key, height: 500, width: 400, crop: :fill %>
+<div class="container flexbox padding">
+<div class="card-dog">
+  <div class="card-img-dog">
+    <%= cl_image_tag @dog.picture.key %>
   </div>
-
-  <div class="show-info">
-    <div class="dog-info">
-      <ul>
-        <li class="dog-name"><strong>Nom: <%= @dog.name %></strong></li>
-        <li>Taille: <%= @dog.size %></li>
-        <li>Race: <%= @dog.breed %></li>
-        <li>Prix de la promenade: <%= @dog.rate %>€/heure</li>
-        <li>Description de notre toutou: <%= @dog.description %></li>
-      </ul>
-    </div>
-  <br>
-    <div class="card-owner">
-      <%= cl_image_tag @dog.owner.picture.key, crop: :fill %>
-      <div class="card-owner-infos">
-        <h2><%= @dog.owner.name %></h2>
-        <p><%= @dog.owner.description %></p>
+  <div class="card-description">
+    <div class="card-title">
+      <div class="card-name">
+        <h1><%= @dog.name %></h1>
+      </div>
+      <div class="card-price">
+        <div><%= @dog.rate %></div>
+        <div class="price-currency">€/h</div>
       </div>
     </div>
-  <br>
-    <%= link_to "On part en balade ?", new_dog_walk_path(@dog), class: "btn btn-success" %>
-     <br>
-     <br>
-    <%= link_to "Les autres chiens près de chez vous", dogs_path, class: "btn btn-primary" %>
+    <div class="card-info mb-4">
+      <ul>
+        <li>Gabarit : <%= @dog.size %></li>
+        <li><%= @dog.breed %></li>
+        <li><%= @dog.description %></li>
+      </ul>
+    </div>
+    <div class="card-user">
+        <%= cl_image_tag @dog.owner.picture.key %>
+      <div class="card-user-description">
+        <div class="card-user-name"><%= @dog.owner.name %></div>
+        <div class="card-user-info"><%= @dog.owner.description %></div>
+      </div>
+    </div>
+    <div class="card-actions text-center">
+      <%= link_to "On part en balade ?", new_dog_walk_path(@dog), class: "btn btn-primary mt-4 mb-3" %>
+      <br>
+      <%= link_to "Autres chiens près de chez vous", dogs_path,  class: "mb-4" %>
+    </div>
   </div>
+</div>
 </div>

@@ -20,6 +20,8 @@
   <% end %>
 <% end %>
 
+<h1 class="text-center padding">Mon espace personnel</h1>
+
 <%# ONGLET WALKS %>
 <h3 class="text-center">Mes promenades</h3>
 
@@ -60,6 +62,7 @@
         <h2 class="card-trip-pricing"><%= dog.rate %> €</h2>
         <%= cl_image_tag dog.owner.picture.key, height: 50, width: 50, crop: :fill  %>
       </div>
+       <%= link_to "Supprimer le profil", dog_path(dog), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer le profil de #{dog.name} ?"}  %>
     </div>
   <% end %>
 </div>
