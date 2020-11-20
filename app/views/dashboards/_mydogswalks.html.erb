@@ -11,13 +11,13 @@
         </div>
         <div class="card-dog-walk-infos">
             <% if my_dog_walk.status == "accepted"  %>
-            <p> <%= "Acceptée" %></p>
+            <p id=accepted-color> <%= "Acceptée" %></p>
             <% elsif my_dog_walk.status == "denied" %>
-            <p> <%= "Refusée" %></p>
+            <p id=denied-color> <%= "Refusée" %></p>
             <% elsif my_dog_walk.status == "cancelled" %>
-            <p> <%= "Annulée" %></p>
+            <p id=cancelled-color> <%= "Annulée" %></p>
             <% else %>
-            <p> <%= "En attente" %></p>
+            <p id=waiting-color> <%= "En attente" %></p>
             <% end %>
           <% unless DateTime.now > my_dog_walk.date_time %>
             <%= link_to "Annuler la promenade", cancel_walk_path(my_dog_walk), method: :patch, class: "text-left" %>

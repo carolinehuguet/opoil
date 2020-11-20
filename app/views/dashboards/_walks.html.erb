@@ -10,13 +10,13 @@
           <%# Nom du chien %>
             <h2><%= walk.dog.name %></h2>
             <% if walk.status == "accepted"  %>
-            <p> <%= "Acceptée" %></p>
+            <p id=accepted-color> <%= "Acceptée" %></p>
             <% elsif walk.status == "denied" %>
-            <p> <%= "Refusée" %></p>
+            <p id="denied-color"> <%= "Refusée" %></p>
             <% elsif walk.status == "cancelled" %>
-            <p> <%= "Annulée" %></p>
+            <p id=cancelled-color> <%= "Annulée" %></p>
             <% else %>
-            <p> <%= "En attente" %></p>
+            <p id=waiting-color> <%= "En attente" %></p>
             <% end %>
           <%# C'était le ... %>
             <p>C'était le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
