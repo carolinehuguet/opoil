@@ -11,8 +11,7 @@
           <p class="grey-text">le <%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></p>
           <p class="grey-text">avec <strong><%= my_dog_walk.user.name %></strong></p>
         </div>
-
-        <div class="card-dog-walk-infos card-dog-walk-infos-right">
+ <div class="card-dog-walk-infos card-dog-walk-infos-right">
           <% if my_dog_walk.status == "accepted"  %>
               <span class="badge badge-success badge-accepted"><%= "Acceptée" %></span>
             <% elsif my_dog_walk.status == "denied" %>
@@ -24,7 +23,6 @@
           <% end %>
 
           <h2 class="card-dog-walk-price text-left "><%= my_dog_walk.dog.rate %><span class="card-dog-walk-price-currency"> €/h</span></h2>
-
           <% unless DateTime.now > my_dog_walk.date_time %>
             <%= link_to "Annuler la promenade", cancel_walk_path(my_dog_walk), method: :patch, class: "link-to-cancel" %>
           <% end %>

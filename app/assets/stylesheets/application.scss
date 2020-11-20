@@ -91,3 +91,18 @@ ul {list-style-type: none;}
   color: #e95800 !important;
   font-weight: 700;
 }
+
+#accepted-color {
+  color:green;
+}
+
+#cancelled-color {
+  color:grey;
+}
+
+#waiting-color {
+  color: #0d76a3;
+}
+#denied-color {
+  color: red !important;
+}

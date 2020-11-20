@@ -1,10 +1,12 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mb-4 pb-2">
     <h1 class="padding">On part en balade !</h1>
   </div>
-  <br>
-  <div class="row justify-content-left padding-left image-dog">
+  <div class="row mt-4">
+      <div class="col-md-3 offset-2 flex-row flex-nowrap">
       <%= cl_image_tag @dog.picture.key, class: "image-dog", height: 300, width: 300, crop: :fill %>
+      </div>
+        <div class="col-md-5 flex-row flex-nowrap">
         <ul>
           <h2>Mon toutou</h2>
           <div class="dog-name h4 orange-text"><%= @dog.name %></div>
@@ -15,11 +17,12 @@
         <div class="price-orange-currency">€/h</div>
         </div>
         </ul>
+        </div>
   </div>
   <br>
   <br>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
+  <div class="row">
+    <div class="col-md-8 offset-2">
       <h3 justify-content-left>Choisissez l'horaire de votre balade</h3>
       <%= simple_form_for [@dog, @walk] do |f| %>
         <%= f.input :date_time %>
