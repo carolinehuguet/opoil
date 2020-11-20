@@ -1,54 +1,61 @@
-<div class="container d-flex justify-content-between">
-  <% @walks.each do |walk| %>
-    <%# Pour n'afficher que les promenades futures ou passées %>
-    <div class="card-trip">
+<% @walks.each do |walk| %>
+  <div class="card-dog-walk-wrapper">
+    <div class="card-dog-walk my-3">
+      <%# Pour n'afficher que les promenades futures ou passées %>
       <%# Si la date_time est passée %>
       <% if walk.date_time < DateTime.now %>
         <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
-        <div class="card-trip-infos">
-          <div>
-          <%# Nom du chien %>
+
+        <div class="card-dog-walk-infos-wrapper d-flex justify-content-between">
+          <div class="card-dog-walk-infos">
+            <%# Nom du chien %>
             <h2><%= walk.dog.name %></h2>
-            <% if walk.status == "accepted"  %>
-            <p id=accepted-color> <%= "Acceptée" %></p>
-            <% elsif walk.status == "denied" %>
-            <p id="denied-color"> <%= "Refusée" %></p>
-            <% elsif walk.status == "cancelled" %>
-            <p id=cancelled-color> <%= "Annulée" %></p>
-            <% else %>
-            <p id=waiting-color> <%= "En attente" %></p>
-            <% end %>
-          <%# C'était le ... %>
+            <%# C'était le ... %>
             <p>C'était le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
-            <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
           </div>
-          <%= cl_image_tag walk.dog.owner.picture.key, class: "avatar", height: 50, width: 50, crop: :fill  %>
+
+          <div class="card-dog-walk-infos card-dog-walk-infos-right">
+            <% if walk.status == "accepted"  %>
+                <span class="badge badge-success badge-accepted"><%= "Acceptée" %></span>
+              <% elsif walk.status == "denied" %>
+                <span class="badge badge-danger badge-refused"><%= "Refusée" %></span>
+              <% elsif walk.status == "cancelled" %>
+                <span class="badge badge-secondary badge-cancelled"><%= "Annulée" %></span>
+              <% else %>
+                <span class="badge badge-warning badge-pending"><%= "En attente" %></span>
+              <% end %>
+            <h2 class="card-dog-walk-price text-left "><%= walk.price %><span class="card-dog-walk-price-currency"> €/h</span></h2>
+          </div>
         </div>
+
         <%# Si la date_time est à venir %>
         <% else %>
+
         <%= cl_image_tag walk.dog.picture.key, crop: :fill %>
-          <div class="card-trip-infos">
-            <div>
-            <%# Nom du chien %>
+          <div class="card-dog-walk-infos-wrapper d-flex justify-content-between">
+            <div class="card-dog-walk-infos">
+              <%# Nom du chien %>
               <h2><%= walk.dog.name %></h2>
-              <% if walk.status == "accepted"  %>
-              <p> <%= "Acceptée" %></p>
-              <% elsif walk.status == "denied" %>
-              <p> <%= "Refusée" %></p>
-              <% elsif walk.status == "cancelled" %>
-              <p> <%= "Annulée" %></p>
-              <% else %>
-              <p> <%= "En attente" %></p>
-              <% end %>
-            <%# C'était le ... %>
+              <%# C'était le ... %>
               <p>Ce sera le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>
-              <h2 class="card-trip-pricing"><%= walk.price %> €</h2>
             </div>
-            <%= cl_image_tag walk.dog.owner.picture.key, class: "avatar", height: 50, width: 50, crop: :fill  %>
-            <%= link_to "Annuler", cancel_walk_path(walk), method: :patch, data: { confirm: "Êtes-vous sûr(e) de vouloir annuler votre promenade avec #{walk.dog.name} ?"}, class: "btn btn-primary mt-4 mb-3" %>
+
+            <div class="card-dog-walk-infos card-dog-walk-infos-right">
+              <% if walk.status == "accepted"  %>
+                <span class="badge badge-success badge-accepted"><%= "Acceptée" %></span>
+              <% elsif walk.status == "denied" %>
+                <span class="badge badge-danger badge-refused"><%= "Refusée" %></span>
+              <% elsif walk.status == "cancelled" %>
+                <span class="badge badge-secondary badge-cancelled"><%= "Annulée" %></span>
+              <% else %>
+                <span class="badge badge-warning badge-pending"><%= "En attente" %></span>
+              <% end %>
+              <h2 class="card-dog-walk-price text-left "><%= walk.price %><span class="card-dog-walk-price-currency"> €/h</span></h2>
+              <%= link_to "Annuler", cancel_walk_path(walk), method: :patch, data: { confirm: "Êtes-vous sûr(e) de vouloir annuler votre promenade avec #{walk.dog.name} ?"}, class: "link-to-cancel" %>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
