@@ -3,30 +3,47 @@
 
 <h1 class="text-center padding">Mon espace personnel</h1>
 
+<%# Ne pas afficher si il n'y a ni chien, ni promenade, ni promenade de chien %>
 <div class="container my-5">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <%# ONGLET WALKS %>
-    <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes promenades</a>
-    </li>
+    <% if @walks.all.count > 0 %>
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes promenades</a>
+      </li>
+    <% end %>
     <%# ONGLET DOGS %>
-    <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes chiens</a>
-    </li>
+    <% if @dogs.all.count > 0 %>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes chiens</a>
+      </li>
+    <% end %>
     <%# ONGLET MY DOGS WALKS %>
-    <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Les promenades de mes chiens</a>
-    </li>
+    <% if @my_dog_walks.all.count > 0 %>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Les promenades de mes chiens</a>
+      </li>
+    <% end %>
   </ul>
+
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <%= render "walks" %>
-    </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <%= render "dogs" %>
-    </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-      <%= render "mydogswalks" %>
-    </div>
+    <%# ONGLET WALKS %>
+    <% if @walks.all.count > 0 %>
+      <div class="tab-pane fade show active mt-5" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <%= render "walks" %>
+      </div>
+    <% end %>
+    <%# ONGLET DOGS %>
+    <% if @dogs.all.count > 0 %>
+      <div class="tab-pane fade mt-5" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <%= render "dogs" %>
+      </div>
+    <% end %>
+    <%# ONGLET MY DOGS WALKS %>
+    <% if @my_dog_walks.all.count > 0 %>
+      <div class="tab-pane fade mt-5" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <%= render "mydogswalks" %>
+      </div>
+    <% end %>
   </div>
 </div>
