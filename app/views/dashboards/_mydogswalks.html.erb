@@ -10,7 +10,6 @@
           <p><strong><%= my_dog_walk.dog.name %></strong></p>
         </div>
         <div class="card-dog-walk-infos">
-          <h2 class="card-dog-pricing text-left"><%= my_dog_walk.dog.rate %> €</h2>
             <% if my_dog_walk.status == "accepted"  %>
             <p> <%= "Acceptée" %></p>
             <% elsif my_dog_walk.status == "denied" %>
@@ -23,6 +22,7 @@
           <% unless DateTime.now > my_dog_walk.date_time %>
             <%= link_to "Annuler la promenade", cancel_walk_path(my_dog_walk), method: :patch, class: "text-left" %>
           <% end %>
+          <h2 class="card-price text-left"><%= my_dog_walk.dog.rate %> €/h</h2>
         </div>
       </div>
     </div>
