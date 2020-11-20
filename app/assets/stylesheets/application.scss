@@ -20,6 +20,10 @@
   padding-top: 100px;
 }
 
+.padding-bottom {
+  padding-bottom: 70px;
+}
+
 .padding-card {
   padding: 20px;
 }
@@ -57,4 +61,33 @@ footer {
   font-size: 20px;
   padding-right:5%;
   margin: 0;
+}
+
+.image-dog {
+  border-radius: 20px;
+}
+
+ul {list-style-type: none;}
+
+.orange-text {
+  color: #e95800;
+}
+
+.price-orange {
+    font-size: 35px;
+    display: flex;
+    color: #e95800;
+
+    .price-orange-currency {
+      font-size: 15px;
+    }
+  }
+
+.padding-left {
+  padding-left: 19%;
+}
+
+.nav-link.active {
+  color: #e95800 !important;
+  font-weight: 700;
 }
