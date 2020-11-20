@@ -14,7 +14,11 @@
               <h2><%= dog.name %></h2>
               <p>Toutou de <%= dog.owner.name %></p>
             </div>
-            <%= cl_image_tag dog.owner.picture.key, class: "avatar", crop: :fill, width: 50 %>
+            <div class="card-price">
+
+        <div class="price-currency"><%= dog.rate %> €/h</div>
+      </div>
+            <%= cl_image_tag dog.owner.picture.key, class: "card-trip-user avatar-bordered", crop: :fill, width: 50 %>
           </div>
         </div>
       <% end %>
