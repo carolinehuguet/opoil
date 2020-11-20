@@ -14,9 +14,8 @@
       </div>
     </div>
     <div class="card-info mb-3">
-        <li>Gabarit : <%= @dog.size %></li>
-        <li><%= @dog.breed %></li>
-        <li><%= @dog.description %></li>
+      <h4><%= @dog.size.capitalize %> <%= @dog.breed %></h4>
+      <p><%= @dog.description %></p>
     </div>
     <div class="card-user">
         <%= cl_image_tag @dog.owner.picture.key %>
