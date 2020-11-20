@@ -3,34 +3,49 @@
 
 .card-dog-dash {
   background: white;
-  width: 600;
-  height: 450;
+  height: 250px;
+  width: 100%;
   display: flex;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.10) 0px 50px 150px -20px;
-
-  .btn-warning {
-    color: #e95800;
-  }
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   .card-actions-dash {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     flex-grow: 1;
-    align-items: flex-end;
+    align-items: center;
+
+    .delete-dog {
+      padding-right: 20px;
+    }
   }
 
   .card-info-dash {
+    padding-top: 0;
     ul {
       list-style: none;
       padding-left: 0;
       font-size: 18px;
     }
+
+    .dog-description {
+      font-size: 16px;
+      color: rgb(145, 145, 145);
+      align-items: flex-end;
+      padding-top: 10px;
+    }
+
+    .dog-breed {
+      font-size: 16px;
+      color: rgb(83, 83, 83);
+    }
   }
 
   .card-img-dog-dash {
-    width: 50%;
+    width: 300px;
     height: 100%;
 
     img {
@@ -40,11 +55,13 @@
     }
   }
 
-  .card-description {
-    width: 50%;
+  .card-description-dash {
+    width: 70%;
     margin: 24px;
     display: flex;
     flex-direction: column;
+    margin-left: 40px;
+    margin-bottom: 2;
   }
 
 

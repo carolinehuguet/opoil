@@ -9,13 +9,13 @@
     <%# ONGLET WALKS %>
     <% if @walks.all.count > 0 %>
       <li class="nav-item">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes promenades</a>
+        <a class="nav-link <%= "active" if @walks.any? %>" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes promenades</a>
       </li>
     <% end %>
     <%# ONGLET DOGS %>
     <% if @dogs.all.count > 0 %>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes chiens</a>
+        <a class="nav-link <%= "active" unless @walks.any? %>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes chiens</a>
       </li>
     <% end %>
     <%# ONGLET MY DOGS WALKS %>
@@ -29,13 +29,13 @@
   <div class="tab-content" id="myTabContent">
     <%# ONGLET WALKS %>
     <% if @walks.all.count > 0 %>
-      <div class="tab-pane fade show active mt-5" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="tab-pane fade <%= "active show" if @walks.any? %> mt-5" id="home" role="tabpanel" aria-labelledby="home-tab">
         <%= render "walks" %>
       </div>
     <% end %>
     <%# ONGLET DOGS %>
     <% if @dogs.all.count > 0 %>
-      <div class="tab-pane fade mt-5" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="tab-pane fade mt-5 <%= "active show" unless @walks.any? %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <%= render "dogs" %>
       </div>
     <% end %>

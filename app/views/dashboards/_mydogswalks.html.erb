@@ -1,15 +1,30 @@
-<div class="container d-flex justify-content-between">
-  <% @my_dog_walks.each do |my_dog_walk| %>
-    <div class="card-trip">
-      <%= cl_image_tag my_dog_walk.dog.picture.key, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= my_dog_walk.dog.name %></h2>
-          <p>C'était le <%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></p>
+
+<% @my_dog_walks.each do |my_dog_walk| %>
+  <div class="card-dog-walk-wrapper">
+    <div class="card-dog-walk my-3">
+      <%= cl_image_tag my_dog_walk.user.picture.key, crop: :fill %>
+      <div class="card-dog-walk-infos-wrapper d-flex justify-content-between">
+        <div class="card-dog-walk-infos">
+          <h2><%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></h2>
+          <p>Avec<strong> <%= my_dog_walk.user.name %></strong></p>
+          <p><strong><%= my_dog_walk.dog.name %></strong></p>
         </div>
-        <h2 class="card-trip-pricing"><%= my_dog_walk.dog.rate %> €</h2>
-        <%= cl_image_tag my_dog_walk.user.picture.key, height: 50, width: 50, crop: :fill  %>
+        <div class="card-dog-walk-infos">
+            <% if my_dog_walk.status == "accepted"  %>
+            <p> <%= "Acceptée" %></p>
+            <% elsif my_dog_walk.status == "denied" %>
+            <p> <%= "Refusée" %></p>
+            <% elsif my_dog_walk.status == "cancelled" %>
+            <p> <%= "Annulée" %></p>
+            <% else %>
+            <p> <%= "En attente" %></p>
+            <% end %>
+          <% unless DateTime.now > my_dog_walk.date_time %>
+            <%= link_to "Annuler la promenade", cancel_walk_path(my_dog_walk), method: :patch, class: "text-left" %>
+          <% end %>
+          <h2 class="card-price text-left"><%= my_dog_walk.dog.rate %> €/h</h2>
+        </div>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

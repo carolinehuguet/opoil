@@ -14,9 +14,8 @@
       </div>
     </div>
     <div class="card-info mb-3">
-        <li>Gabarit : <%= @dog.size %></li>
-        <li><%= @dog.breed %></li>
-        <li><%= @dog.description %></li>
+      <h4><%= @dog.size.capitalize %> <%= @dog.breed %></h4>
+      <p><%= @dog.description %></p>
     </div>
     <div class="card-user">
         <%= cl_image_tag @dog.owner.picture.key %>
@@ -26,7 +25,9 @@
       </div>
     </div>
     <div class="card-actions text-center">
+      <% unless current_user == @dog.owner %>
       <%= link_to "On part en balade ?", new_dog_walk_path(@dog), class: "btn btn-primary mt-1 mb-3" %>
+      <% end %>
       <br>
       <%= link_to "Autres chiens près de chez vous", dogs_path,  class: "mb-5" %>
     </div>

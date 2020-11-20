@@ -19,7 +19,7 @@
       <div class="card-trip-infos text-center">
         <div>
           <h2><%= dog.name %></h2>
-          <p>Propriétaire : <%= dog.owner.name %></p>
+          <p>Toutou de <%= dog.owner.name %></p>
         </div>
         <%= cl_image_tag dog.owner.picture.key, class: "avatar", crop: :fill, width: 50 %>
       </div>
