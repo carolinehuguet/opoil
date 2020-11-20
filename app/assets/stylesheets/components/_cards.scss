@@ -172,11 +172,11 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   border-radius: 12px;
-  width: 50%;
+  width: 60%;
 }
 
 .card-dog-walk-wrapper {
@@ -187,6 +187,19 @@
 
 .card-dog-walk-infos-wrapper  {
   width: 100%;
+}
+
+.card-dog-walk-infos p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .8;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.grey-text {
+  opacity: .6;
+  line-height: 1.2;
 }
 
 .card-dog-walk img {
@@ -201,22 +214,33 @@
   margin: 0;
 }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
 .card-dog-walk .card-dog-walk-infos {
-  padding: 16px;
+  padding: 20px;
 }
 
 .card-dog-walk-infos {
-
+  // background-color: hotpink;
 }
 
-.card-dog-walk-infos p {
-  padding: 0px;
+.card-dog-walk-price {
+  font-size: 35px;
+  display: flex;
+  color: #e95800;
+  padding: 10px 0px;
+}
+
+.card-dog-walk-price-currency {
+  font-size: 15px;
+}
+
+.card-dog-walk-infos-right {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.link-to-cancel {
+  font-size :12px;
+  color: grey;
 }

@@ -32,13 +32,13 @@
             <%# Nom du chien %>
               <h2><%= walk.dog.name %></h2>
               <% if walk.status == "accepted"  %>
-              <p> <%= "Acceptée" %></p>
+                <p> <%= "Acceptée" %></p>
               <% elsif walk.status == "denied" %>
-              <p> <%= "Refusée" %></p>
+                <p><%= "Refusée" %></p>
               <% elsif walk.status == "cancelled" %>
-              <p> <%= "Annulée" %></p>
+                <p><%= "Annulée" %></p>
               <% else %>
-              <p> <%= "En attente" %></p>
+                <p><%= "En attente" %></p>
               <% end %>
             <%# C'était le ... %>
               <p>Ce sera le <%= I18n.l walk.date_time, format: :long, locale: :fr %></p>

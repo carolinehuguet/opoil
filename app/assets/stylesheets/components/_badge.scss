@@ -1,0 +1,27 @@
+.badge-accepted,
+.badge-refused,
+.badge-cancelled,
+.badge-pending {
+  border-radius: 14px;
+  padding: 8px 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.badge-accepted {
+  background-color: #66BA37;
+}
+
+.badge-refused {
+  background-color: #cb2110;
+}
+
+.badge-cancelled {
+  background-color: gray;
+}
+
+.badge-pending {
+  background-color: $yellow;
+}
