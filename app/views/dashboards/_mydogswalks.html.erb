@@ -6,11 +6,22 @@
       <div class="card-dog-walk-infos-wrapper d-flex justify-content-between">
         <div class="card-dog-walk-infos">
           <h2><%= I18n.l my_dog_walk.date_time, format: :long, locale: :fr %></h2>
-          <p>Avec<strong><%= my_dog_walk.user.name %></strong></p>
+          <p>Avec<strong> <%= my_dog_walk.user.name %></strong></p>
           <p><strong><%= my_dog_walk.dog.name %></strong></p>
         </div>
         <div class="card-dog-walk-infos">
-          <p class="text-left"><%= link_to "Annuler la promenade", cancel_walk_path(my_dog_walk) %></p>
+            <% if my_dog_walk.status == "accepted"  %>
+            <p> <%= "Acceptée" %></p>
+            <% elsif my_dog_walk.status == "denied" %>
+            <p> <%= "Refusée" %></p>
+            <% elsif my_dog_walk.status == "cancelled" %>
+            <p> <%= "Annulée" %></p>
+            <% else %>
+            <p> <%= "En attente" %></p>
+            <% end %>
+          <% unless DateTime.now > my_dog_walk.date_time %>
+            <%= link_to "Annuler la promenade", cancel_walk_path(my_dog_walk), method: :patch, class: "text-left" %>
+          <% end %>
           <h2 class="card-price text-left"><%= my_dog_walk.dog.rate %> €/h</h2>
         </div>
       </div>
