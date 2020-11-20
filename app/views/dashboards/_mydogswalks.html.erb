@@ -1,4 +1,3 @@
-
 <% @my_dog_walks.each do |my_dog_walk| %>
   <div class="card-dog-walk-wrapper">
     <div class="card-dog-walk my-3">
@@ -24,7 +23,7 @@
           <% end %>
 
           <h2 class="card-dog-walk-price text-left "><%= my_dog_walk.dog.rate %><span class="card-dog-walk-price-currency"> €/h</span></h2>
-          <% unless DateTime.now > my_dog_walk.date_time %>
+          <% unless DateTime.now > my_dog_walk.date_time || my_dog_walk.status == "cancelled" || my_dog_walk.status == "denied" %>
             <%= link_to "Annuler la promenade", cancel_walk_path(my_dog_walk), method: :patch, class: "link-to-cancel" %>
           <% end %>
         </div>
