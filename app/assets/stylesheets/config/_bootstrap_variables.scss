@@ -18,9 +18,15 @@ $danger:     $red;
 $warning:    white;
 
 // Buttons & inputs' radius
-$border-radius:    8px;
+$border-radius:    9px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 $margin: 10px;
+$padding:20px;
 
 // Override other variables below!
+.btn {
+    min-width: 250px;
+    min-height: 50px;
+    padding-top:12px !important;
+}

@@ -13,12 +13,10 @@
         <div class="price-currency">€/h</div>
       </div>
     </div>
-    <div class="card-info mb-4">
-      <ul>
+    <div class="card-info mb-3">
         <li>Gabarit : <%= @dog.size %></li>
         <li><%= @dog.breed %></li>
         <li><%= @dog.description %></li>
-      </ul>
     </div>
     <div class="card-user">
         <%= cl_image_tag @dog.owner.picture.key %>
@@ -28,9 +26,9 @@
       </div>
     </div>
     <div class="card-actions text-center">
-      <%= link_to "On part en balade ?", new_dog_walk_path(@dog), class: "btn btn-primary mt-4 mb-3" %>
+      <%= link_to "On part en balade ?", new_dog_walk_path(@dog), class: "btn btn-primary mt-1 mb-3" %>
       <br>
-      <%= link_to "Autres chiens près de chez vous", dogs_path,  class: "mb-4" %>
+      <%= link_to "Autres chiens près de chez vous", dogs_path,  class: "mb-5" %>
     </div>
   </div>
 </div>

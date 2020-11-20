@@ -33,3 +33,26 @@
 .body {
   background-color: #fffaf5;
 }
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {position: relative;}
+
+footer {
+  color: #e95800;
+  background-color: #fff;
+  padding-top: 40px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.1);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  font-size: 20px;
+}
