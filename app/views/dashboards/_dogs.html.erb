@@ -1,30 +1,32 @@
 <div class="container justify-content-between">
 <% @dogs.each do |dog| %>
-  <div class="card-dog-dash">
-    <div class="card-img-dog-dash">
-      <%= cl_image_tag dog.picture.key %>
-    </div>
-    <div class="card-description-dash">
-      <div class="card-title">
-        <div class="card-name">
-          <h3><%= dog.name %></h3>
+  <%= link_to dog, class: "link-dog" do %>
+    <div class="card-dog-dash">
+      <div class="card-img-dog-dash">
+        <%= cl_image_tag dog.picture.key %>
+      </div>
+      <div class="card-description-dash">
+        <div class="card-title">
+          <div class="card-name">
+            <h3><%= dog.name %></h3>
+          </div>
+          <div class="card-price">
+            <div><%= dog.rate %></div>
+            <div class="price-currency">€/h</div>
+          </div>
         </div>
-        <div class="card-price">
-          <div><%= dog.rate %></div>
-          <div class="price-currency">€/h</div>
+        <div class="card-info-dash mt-2">
+          <ul>
+            <li class="dog-breed"> <%= dog.size.capitalize %> <strong><%= dog.breed %></strong></li>
+            <li class="dog-description"><%= dog.description %></li>
+          </ul>
+        </div>
+        <div class="card-actions-dash text-center">
+          <%= link_to "Supprimer le profil", dog_path(dog), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer le profil de #{dog.name} ?"}, class: "delete-dog" %>
+          <%= link_to "Modifier les infos", edit_dog_path(dog), class: "btn btn-primary" %>
         </div>
       </div>
-      <div class="card-info-dash mt-2">
-        <ul>
-          <li class="dog-breed"> <%= dog.size.capitalize %> <strong><%= dog.breed %></strong></li>
-          <li class="dog-description"><%= dog.description %></li>
-        </ul>
-      </div>
-      <div class="card-actions-dash text-center">
-        <%= link_to "Supprimer le profil", dog_path(dog), method: :delete, data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer le profil de #{dog.name} ?"}, class: "delete-dog" %>
-        <%= link_to "Modifier les infos", edit_dog_path(dog), class: "btn btn-primary" %>
-      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 </div>
