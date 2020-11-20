@@ -91,7 +91,7 @@
   background: white;
   box-shadow: rgba(50, 50, 93, 0.10) 0px 50px 150px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   border-radius: 20px;
-  margin: 10px;
+  margin: 10px auto;
 }
 
 .card-trip > img {
@@ -165,8 +165,3 @@
   justify-content: space-around;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}

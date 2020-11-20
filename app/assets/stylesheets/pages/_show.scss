@@ -77,12 +77,12 @@
     text-decoration: none;
   }
 
-.opacity-color div:hover .link-text {
+.opacity-color .link-dog:hover .link-text {
   opacity: 1;
 }
 
-.opacity-color div {
-background: #e95800;
+.opacity-color .link-dog .card-trip {
+  background: #e95800;
 }
 
 .opacity-color .dog-photo {
@@ -92,8 +92,8 @@ background: #e95800;
   transition: .5s ease-in-out;
 }
 
-.opacity-color div:hover .dog-photo {
-  opacity: .1;
+.opacity-color .link-dog:hover .dog-photo {
+  opacity: .3;
 }
 
 

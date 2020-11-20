@@ -6,3 +6,26 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+
+
+@media(max-width: 992px) {
+  #map {
+    display: none;
+
+  }
+}
+
+.dogs-map-wrapper {
+  flex: 0 0 33%;
+}
+
+.dogs-list-wrapper {
+  flex: 0 0 64%;
+}

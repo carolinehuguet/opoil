@@ -1,25 +1,33 @@
-<div class="container padding">
-  <h1 class="text-center">Les chiens près de chez vous</h1>
 
-  <div class="grid display row row-cols-4 col-12">
-    <% @dogs.each do |dog| %>
-      <div class="card-trip">
-        <%= cl_image_tag dog.picture.key, crop: :fill, width: 400 %>
-        <div class="card-trip-infos text-center ">
-          <div>
-            <h2><%= dog.name %></h2>
-            <p><%= link_to '👀 Détail', dog %></p>
+<div class="container-fluid padding">
+  <h1 class="text-center pb-5">Les chiens près de chez vous</h1>
+<div class="d-flex justify-content-around">
+  <div class="dogs-list-wrapper row opacity-color">
+  <% @dogs.each do |dog| %>
+    <div class="col-md-4">
+      <%= link_to dog, class: "link-dog" do %>
+        <div class="card-trip">
+          <div class="link-text">👀 Détail</div>
+          <%= cl_image_tag dog.picture.key, crop: :fill, width: 400, class: "dog-photo"%>
+          <div class="card-trip-infos text-center ">
+            <div>
+              <h2><%= dog.name %></h2>
+              <p>Toutou de <%= dog.owner.name %></p>
+            </div>
+            <%= cl_image_tag dog.owner.picture.key, class: "avatar", crop: :fill, width: 50 %>
           </div>
-          <%= cl_image_tag dog.owner.picture.key, class: "avatar", crop: :fill, width: 50 %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+  <% end %>
   </div>
-
-
+  <div class="dogs-map-wrapper">
+  <div id="map"
+     style="width: 100%; height: 100vh;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  </div>
+</div>
 </div>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
