@@ -10,13 +10,13 @@
 </div>
 <div class="container text-center">
   <h3 class="mt-5 mb-4">Quelques toutous inscrits récemment</h3>
-<div class="grid display row row-cols-4 col-12 opacity-color">
+<div class="grid display row row-cols-4 col-12 opacity-color mb-5">
   <% @dogs.each do |dog| %>
     <%= link_to dog, class: "link-dog" do %>
     <div class="card-trip">
       <div class="link-text">👀 Détail</div>
       <%= cl_image_tag dog.picture.key, crop: :fill, width: 400, class: "dog-photo"%>
-      <div class="card-trip-infos text-center ">
+      <div class="card-trip-infos text-center">
         <div>
           <h2><%= dog.name %></h2>
           <p>Propriétaire : <%= dog.owner.name %></p>
